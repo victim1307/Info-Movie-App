@@ -1,11 +1,9 @@
 package com.example.myapplication;
 
-import static androidx.core.content.ContextCompat.startActivity;
-
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,16 +11,10 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
-
 import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
-
-import java.sql.SQLOutput;
 import java.util.List;
 
 public class AdapterClass extends RecyclerView.Adapter<AdapterClass.MyViewHolder>{
@@ -35,6 +27,7 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.MyViewHolder
         this.mData = mData;
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void setMovieList(List<Result> mData){
         this.mData = mData;
         notifyDataSetChanged();
@@ -49,6 +42,7 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.MyViewHolder
         return new MyViewHolder(v);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Result r = mData.get(position);
@@ -96,7 +90,6 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.MyViewHolder
     public int getItemCount() {
         return mData.size();
     }
-
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 

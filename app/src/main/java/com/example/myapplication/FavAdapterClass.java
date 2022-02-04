@@ -1,6 +1,5 @@
 package com.example.myapplication;
 
-import static androidx.core.content.ContextCompat.startActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,16 +12,10 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
-
 import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
-
-import java.sql.SQLOutput;
 import java.util.List;
 
 public class FavAdapterClass extends RecyclerView.Adapter<FavAdapterClass.MyViewHolder>{
@@ -35,6 +28,7 @@ public class FavAdapterClass extends RecyclerView.Adapter<FavAdapterClass.MyView
         this.mData = mData;
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void setMovieList(List<FavResults> mData){
         this.mData = mData;
         notifyDataSetChanged();

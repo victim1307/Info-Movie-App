@@ -44,8 +44,7 @@ public class Parsing extends AppCompatActivity {
                 String img_url = "https://image.tmdb.org/t/p/original/";
                 ImageView img = findViewById(R.id.imageView);
                 Picasso.get().load(img_url+res.getPoster_path()).into(img);
-//                ImageView bgImage = findViewById(R.id.bgImage);
-//                Picasso.get().load(img_url+response.body().getBackdrop_path()).into(bgImage);
+
                 TextView txt_title = findViewById(R.id.txt_title);
                 txt_title.setText(res.getTitle());
                 //overview

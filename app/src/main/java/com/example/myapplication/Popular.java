@@ -7,21 +7,15 @@ import androidx.core.widget.NestedScrollView;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
-
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
-
-import org.json.JSONArray;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -94,8 +88,6 @@ public class Popular extends AppCompatActivity implements NavigationView.OnNavig
             public void onResponse(@NonNull Call<MovieModel> call, @NonNull Response<MovieModel> response) {
                 assert response.body() != null;
                 movieList.addAll(response.body().getResults());
-                JSONArray jsonArray = new JSONArray();
-                jsonArray.put(movieList);
                 recyclerAdapter.setMovieList(movieList);
                 recyclerView.setAdapter(recyclerAdapter);
             }
